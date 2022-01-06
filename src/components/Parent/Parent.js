@@ -13,6 +13,11 @@ export default class Parent extends React.Component {
 			],
 			sonMessage: "",
 		};
+
+		// 给事件回调函数绑定this
+		this.activeSon = this.activeSon.bind(this);
+		this.delRecord = this.delRecord.bind(this);
+		this.getSonMessage = this.getSonMessage.bind(this);
 	}
 
 	componentDidCatch(error, errorInfo) {
@@ -38,8 +43,10 @@ export default class Parent extends React.Component {
 	choiceRecord = null;
 
 	//给子元素传递回调函数，返回要操作的值
-	activeSon = (e, obj) => {
+	//obj 为传递参数  o 为触发者的元素或者事件
+	activeSon(obj, o) {
 		this.choiceRecord = obj;
+		console.log(o);
 		const recordList = this.state.recordList.map((item) => {
 			item.isChoice = false;
 			if (item.id === obj.id) {
@@ -47,10 +54,11 @@ export default class Parent extends React.Component {
 			}
 			return item;
 		});
+		console.log(recordList);
 		this.setState({ recordList });
-	};
+	}
 	// 删除选中的字段
-	delRecord(e) {
+	delRecord() {
 		if (this.choiceRecord == null) {
 			return;
 		}
@@ -60,9 +68,9 @@ export default class Parent extends React.Component {
 		this.setState({ recordList });
 	}
 
-	getSonMessage = (e, msg) => {
+	getSonMessage(msg) {
 		this.setState({ sonMessage: msg });
-	};
+	}
 
 	render() {
 		const { recordList, sonMessage } = this.state;
@@ -72,11 +80,15 @@ export default class Parent extends React.Component {
 		return (
 			<>
 				<div>
-					<span onClick={() => this.delRecord()}>delete</span>
+					<span onClick={this.delRecord.bind(this)}>delete</span>
 				</div>
 				<ul>
 					{recordList == null ? null : (
-						<Son recordList={recordList} activeSon={this.activeSon} />
+						<Son
+							recordList={recordList}
+							activeSon={this.activeSon}
+							sendMessagetoBro={this.getSonMessage}
+						/>
 					)}
 					{recordList.length > 0 && (
 						<Son

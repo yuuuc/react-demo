@@ -20,13 +20,13 @@ export default class Son extends React.Component {
 						<li
 							key={item.id}
 							className={item.isChoice ? "active" : " "}
-							onClick={(e) => activeSon(e, item)}
+							onClick={activeSon.bind(this, item)}
 						>
 							{item.text}
 						</li>
 					);
 				})}
-				<li onClick={(e) => sendMessagetoBro(e, "hello this is message")}>
+				<li onClick={sendMessagetoBro.bind(this, "hello this is message")}>
 					send message to bro
 				</li>
 			</>
