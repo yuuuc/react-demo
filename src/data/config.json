@@ -1,0 +1,63 @@
+{
+    "workbench.colorTheme": "One Dark Pro",
+		"trailingComma": "es5",
+		"tabWidth": 4,
+		"semi": false,
+    "editor.tabSize": 4,
+	"editor.detectIndentation": false,
+    "editor.tokenColorCustomizations": {
+        "comments": "#09b25d"
+    },
+    "salesforcedx-vscode-apex.java.home": "C:\\Program Files\\Zulu\\zulu-11",
+    "redhat.telemetry.enabled": true,
+    "editor.formatOnSave": true,
+    "files.autoSave": "afterDelay",
+		"singleQuote": true,
+		"printWidth": 80,
+		"proseWrap": "always",
+		"requireConfig": false,
+		"useTabs": false,
+		"bracketSpacing": true,
+		"jsxBracketSameLine": false,
+		"[html]": {
+			"editor.defaultFormatter": "esbenp.prettier-vscode"
+		},
+		"diffEditor.wordWrap": "on",
+		"prettier.useTabs": true,
+        "oneDarkPro.italic": false,
+		"oneDarkPro.bold": true,
+		"editor.wordWrap": "on",
+		"editor.suggest.snippetsPreventQuickSuggestions": false,
+		"workbench.iconTheme": "vscode-icons",
+		"[javascript]": {
+			"editor.defaultFormatter": "esbenp.prettier-vscode"
+		},
+		"[vue]": {
+			"editor.defaultFormatter": "esbenp.prettier-vscode"
+		},
+    "fileheader.customMade": {
+        "Version":"",
+        "Company":"",
+        "Author":"yu.chen",
+        "Date":"Do not edit",
+        "Description":"",
+        //"LastEditors": "OBKoro1", // 文件最后编辑者
+        "LastEditTime": "Do not edit" // 文件最后编辑时间
+    }, // 头部注释
+    "fileheader.cursorMode": {
+        "Author":"yu.chen",
+        "Date":"Do not edit",
+        "Name":"",
+        "Test":"",
+        "Param":"",
+        "Return":"",
+        "Description":""
+    },// 函数注释 
+    "fileheader.configObj": {
+        "dateFormat":"YYYY/MM/DD",
+        "createHeader":false,
+        "autoAdd":false
+
+    }
+  
+}
